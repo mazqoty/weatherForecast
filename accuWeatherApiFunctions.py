@@ -16,7 +16,11 @@ def citySearch(citySearchURL, payLoad1):
         #print("Request body:", response.request.body)
         #print("Text: ", response.text[0:100])
         
+        # pretify string to analyze
+        # jsonData = json.dumps(jsonData, indent = 2) # returns string
+        
         jsonData = json.loads(response.text)
+        
         if len(jsonData) > 0:
             return jsonData
         else:
@@ -38,7 +42,10 @@ def forecastFor5Days(urlFor5DayForecast, payLoad2):
         #print("Headers: ", response.headers)
         #print("Request body:", response.request.body)
         #print("Text: ", response.text[0:100])
-
+        
+        ##pretify string to analyze
+        #jsonData = json.dumps(jsonData, indent = 2) # returns string
+        
         forecast = json.loads(response.text) #returns json
 
         # Now parsing json and converting into dataframe
